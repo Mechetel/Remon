@@ -20,7 +20,7 @@ RAILS_ENV=development
 ```
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
-POSTGRES_DB=rails_blog_dev
+POSTGRES_DB=railsredditclone_dev
 ```
 
 ### Starting the application
