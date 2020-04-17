@@ -23,6 +23,7 @@
 # Ignore packages
 /vendor
 /node_modules
+package-lock.json
 
 # Ignore dist files
 /public/assets
