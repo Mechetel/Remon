@@ -8,8 +8,9 @@ WORKDIR /railsredditclone
 COPY Gemfile /railsredditclone/Gemfile
 COPY Gemfile.lock /railsredditclone/Gemfile.lock
 RUN gem uninstall bundler -a \
- && gem install bundler -v 2.0.1 \
- && bundle install
+      && gem install bundler -v 2.0.1 \
+      && bundle install
+
 COPY . /railsredditclone
 
 
