@@ -18,8 +18,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: <%= ENV.fetch("POSTGRES_HOST", 'localhost') %>
-  user: postgres
-  password: postgres
+  user: <%= ENV.fetch("PGUSER") %>
+  password: <%= ENV.fetch("PGPASSWORD") %>
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -61,7 +61,7 @@ development:
 test:
   <<: *default
   user: <%= ENV.fetch("PGUSER") %>
-  user: <%= ENV.fetch("PGPASSWORD") %>
+  password: <%= ENV.fetch("PGPASSWORD") %>
   database: railsredditclone_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: zomg_production
-  username: zomg
-  password: <%= ENV['ZOMG_DATABASE_PASSWORD'] %>
+  database: railsredditclone_production
+  user: <%= ENV.fetch("PGUSER") %>
+  password: <%= ENV.fetch("PGPASSWORD") %>
