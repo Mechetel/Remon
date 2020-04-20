@@ -22,7 +22,7 @@ services:
     restart: always
     env_file:
       - db.env
-      
+    
 volumes:
   bundle_path:
   postgres-data:

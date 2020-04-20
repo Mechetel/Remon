@@ -33,6 +33,8 @@ gem 'bcrypt', '~> 3.1.13'
 
 gem 'devise'
 
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+
 
 
 # Use Capistrano for deployment

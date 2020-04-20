@@ -11,11 +11,18 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir /railsredditclone
 WORKDIR /railsredditclone
+
+ENV BUNDLE_PATH /box
+
 COPY Gemfile /railsredditclone/Gemfile
 COPY Gemfile.lock /railsredditclone/Gemfile.lock
 RUN gem uninstall bundler -a \
       && gem install bundler -v 2.0.1 \
       && bundle install
+
+COPY package.json .
+COPY yarn.lock .
+RUN yarn install --check-files
 
 COPY . /railsredditclone
 
