@@ -31,11 +31,11 @@ gem 'jbuilder', '~> 2.9.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.13'
 
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0.0'
+gem 'bootsnap', require: false
+
 gem 'devise'
-
-gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
-
-
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

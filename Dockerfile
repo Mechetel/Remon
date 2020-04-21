@@ -1,13 +1,13 @@
 FROM ruby:2.6.3-stretch
 
-RUN apt-get update && apt-get install -y \
-  curl \
-  build-essential \
-  libpq-dev &&\
-  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-  apt-get update && apt-get install -y nodejs yarn
+RUN apt-get update -qq \
+  && apt-get install -y curl \
+  && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+  && apt-get update -qq \
+  && apt-get install -y nodejs yarn postgresql-client \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /railsredditclone
 WORKDIR /railsredditclone
@@ -19,10 +19,6 @@ COPY Gemfile.lock /railsredditclone/Gemfile.lock
 RUN gem uninstall bundler -a \
       && gem install bundler -v 2.0.1 \
       && bundle install
-
-COPY package.json .
-COPY yarn.lock .
-RUN yarn install --check-files
 
 COPY . /railsredditclone
 
