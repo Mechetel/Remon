@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails Raddit Clone</title>
+    <title>Rails Reddit Clone</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,15 @@
   <body>
     <%= render partial: "layouts/header" %>
 
-    <%=  yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <%=  yield %>
+        </div>
+      </div>
+    </div>
+
+
 
     <%= render partial: "layouts/footer" %>
   </body>
