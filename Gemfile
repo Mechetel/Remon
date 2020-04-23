@@ -34,7 +34,7 @@ gem 'bcrypt', '~> 3.1.13'
 gem 'rake', '~> 13.0.1'
 
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap', '~> 4.0.0'
 gem 'bootsnap', require: false
 
 gem 'devise'

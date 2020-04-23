@@ -1,6 +1,6 @@
 FROM ruby:2.6.3-stretch
 
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && curl -sL https://deb.nodesource.com/setup_10.x | bash - &&  apt-get install -y postgresql-client nodejs
 
 RUN mkdir /railsredditclone
 WORKDIR /railsredditclone
