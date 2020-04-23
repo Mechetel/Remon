@@ -1,3 +1,5 @@
+# This is blog application with communities like in Reddit 
+
 # CircleCI Demo Application: Ruby on Rails [![CircleCI](https://circleci.com/gh/CircleCI-Public/circleci-demo-ruby-rails.svg?style=svg)](https://circleci.com/gh/CircleCI-Public/circleci-demo-ruby-rails)
 
 This is an example application showcasing how to run a Ruby on Rails app on CircleCI 2.0.
@@ -20,7 +22,7 @@ RAILS_ENV=development
 ```
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
-POSTGRES_DB=railsredditclone_dev
+POSTGRES_DB=remon_dev
 ```
 
 ### Starting the application
@@ -45,4 +47,4 @@ Navigate to http://localhost:3000
 Copyright (c) 2019 CircleCI
 
 Distributed under the MIT License. See the file COPYING.
-# Rails-Reddit-Clone
+# Remon

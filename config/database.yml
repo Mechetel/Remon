@@ -26,7 +26,7 @@ default: &default
 
 development:
   <<: *default
-  database: railsredditclone_dev
+  database: remon_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,7 +62,7 @@ test:
   <<: *default
   user: <%= ENV.fetch("PGUSER") %>
   password: <%= ENV.fetch("PGPASSWORD") %>
-  database: railsredditclone_test
+  database: remon_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: railsredditclone_production
+  database: remon_production
   user: <%= ENV.fetch("PGUSER") %>
   password: <%= ENV.fetch("PGPASSWORD") %>

@@ -2,14 +2,14 @@ FROM ruby:2.6.3-stretch
 
 RUN apt-get update -qq && curl -sL https://deb.nodesource.com/setup_10.x | bash - &&  apt-get install -y postgresql-client nodejs
 
-RUN mkdir /railsredditclone
-WORKDIR /railsredditclone
+RUN mkdir /remon
+WORKDIR /remon
 
-COPY Gemfile /railsredditclone/Gemfile
-COPY Gemfile.lock /railsredditclone/Gemfile.lock
+COPY Gemfile /remon/Gemfile
+COPY Gemfile.lock /remon/Gemfile.lock
 RUN bundler install
 
-COPY . /railsredditclone
+COPY . /remon
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
