@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new post_values
+    @post = Post.new post_params
     @post.account_id = current_account.id
     @post.community_id = params[:community_id]
 
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id]) 
   end
 
-  def post_values
+  def post_params
     params.require(:post).permit(:title, :body)
   end
   
