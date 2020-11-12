@@ -23,16 +23,16 @@ class CommunitiesController < ApplicationController
     else
       render :new
     end
-  end 
+  end
 
   private
 
   def set_community
-    @community = Community.find(params[:id]) 
+    @community = Community.find(params[:id])
   end
 
   def community_params
     params.require(:community).permit(:name, :url, :rules)
   end
-  
+
 end
